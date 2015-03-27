@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+        <TextView
+
+            android:id="@+id/app_bar"
+            android:text="Search Ride"
+            android:textSize="@dimen/abc_text_size_display_1_material"
+            android:textColor="@color/primary_dark_material_dark"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+
+            />
+
+    </include>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPostalAddress"
+            android:ems="10"
+            android:id="@+id/editText2"
+            android:hint="Point of Origin"
+            android:layout_below="@+id/txtDestination"
+            android:layout_centerHorizontal="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:ems="10"
+            android:id="@+id/txtDate"
+            android:layout_alignStart="@+id/editText2"
+            android:layout_below="@+id/editText2"
+            android:hint="Date of Travel"
+            android:focusable="false" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/editText7"
+            android:layout_alignStart="@+id/txtDate"
+            android:hint="Donation"
+            android:layout_below="@+id/txtDate" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:id="@+id/button"
+            android:layout_below="@+id/editText7"
+            android:layout_centerHorizontal="true" />
+
+        <AutoCompleteTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtDestination"
+            android:hint="Destination"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/editText2"
+            android:layout_alignEnd="@+id/editText2" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/editText7"
+        android:layout_weight="1" />
+</LinearLayout>

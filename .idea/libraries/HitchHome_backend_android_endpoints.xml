@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="HitchHome_backend-android-endpoints">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/HitchHome_backend/build/libs/HitchHome_backend-android-endpoints.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

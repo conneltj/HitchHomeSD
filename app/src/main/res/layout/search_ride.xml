@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:fbutton="http://schemas.android.com/apk/res-auto" xmlns:fab="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -140,22 +141,29 @@
         android:layout_alignBottom="@+id/RelativeLayout"
         android:layout_alignParentEnd="true" />
 
-    <ImageView
-        android:layout_width="wrap_content"
+    <include
+        android:id="@+id/result1"
+        layout="@layout/ride_result"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="0dp"
+        android:layout_below="@+id/RelativeLayout"
         android:layout_alignParentStart="true"
-        android:src="@drawable/ic_map_black_48dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="25dp" />
-
-    <ImageView
-        android:layout_width="wrap_content"
+        android:layout_marginTop="40dp" />
+    <include
+        android:id="@+id/result2"
+        layout="@layout/ride_result2"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView3"
-        android:layout_alignBottom="@+id/imageView2"
-        android:src="@drawable/ic_directions_car_black_48dp"
-        android:layout_alignParentEnd="true" />
-
-
+        android:layout_width="match_parent"
+        android:layout_marginLeft="0dp"
+        android:layout_below="@+id/result1"
+        android:layout_alignParentStart="true" />
+    <include
+        android:id="@+id/result3"
+        layout="@layout/ride_result3"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="0dp"
+        android:layout_below="@+id/result2"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

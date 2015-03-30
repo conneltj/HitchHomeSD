@@ -18,26 +18,33 @@ import android.widget.Toast;
 public class SearchRide extends ActionBarActivity implements AdapterView.OnItemClickListener {
     EditText myDate;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_ride);
 
-        doOnClickBindings();
+        //doOnClickBindings();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle("Search Ride");
 
         AutoCompleteTextView autoCompView = (AutoCompleteTextView) findViewById(R.id.txtDestination);
         autoCompView.setAdapter(new CityStateAutoCompleteAdapter(this, R.layout.autocomplete_listitem));
         autoCompView.setThreshold(3);
         autoCompView.setOnItemClickListener(this);
+
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         //Adds item to action bar if present
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        MenuItem editBtn = menu.findItem(R.id.action_edit);
+        editBtn.setVisible(false);
         return true;
     }
 

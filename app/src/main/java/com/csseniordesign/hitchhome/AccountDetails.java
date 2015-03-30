@@ -19,7 +19,8 @@ public class AccountDetails extends ActionBarActivity {
 
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle("Account Details");
     }
 
     @Override

@@ -15,97 +15,63 @@
 
     </include>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Final Destination City"
-        android:id="@+id/textView10"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp" />
-
-    <EditText
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPostalAddress"
-        android:ems="10"
-        android:id="@+id/editText11"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp" />
+        android:layout_weight="0.60">
 
-    <TextView
-        android:layout_width="186dp"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Number of Riders"
-        android:id="@+id/textView11"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp" />
+        <AutoCompleteTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Final Destination City"
+            android:id="@+id/driverDestination"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="75dp"
+            android:layout_marginRight="75dp"
+            android:layout_marginTop="20dp" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/editText12"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/txtNumRiders"
+            android:layout_below="@+id/driverDestination"
+            android:layout_alignStart="@+id/driverDestination"
+            android:layout_alignEnd="@+id/driverDestination"
+            android:hint="Number of Riders" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Donation Suggestion"
-        android:id="@+id/textView12"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtDepartureDate"
+            android:layout_below="@+id/txtNumRiders"
+            android:layout_alignEnd="@+id/txtNumRiders"
+            android:layout_alignStart="@+id/txtNumRiders"
+            android:hint="Departure Date" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/editText13"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/txtSetDonation"
+            android:layout_below="@+id/txtDepartureDate"
+            android:hint="Set Donation"
+            android:layout_alignEnd="@+id/txtDepartureDate"
+            android:layout_alignStart="@+id/txtDepartureDate" />
 
-    <CheckBox
-        android:layout_width="130dp"
-        android:layout_height="wrap_content"
-        android:text="Provide Space for Baggage"
-        android:id="@+id/checkBox2"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp" />
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New CheckBox"
+            android:id="@+id/checkBox"
+            android:layout_below="@+id/txtSetDonation"
+            android:layout_alignStart="@+id/txtSetDonation"
+            android:layout_alignEnd="@+id/txtSetDonation" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Additional Information"
-        android:id="@+id/textView13"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:id="@+id/editText14"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Post Ride"
-        android:id="@+id/button2"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="30dp" />
+    </RelativeLayout>
 
 </LinearLayout>

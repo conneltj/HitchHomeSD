@@ -19,12 +19,16 @@ public class MyRides extends ActionBarActivity {
 
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle("My Rides");
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         //Adds item to action bar if present
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        MenuItem editBtn = menu.findItem(R.id.action_edit);
+        editBtn.setVisible(false);
         return true;
     }
 

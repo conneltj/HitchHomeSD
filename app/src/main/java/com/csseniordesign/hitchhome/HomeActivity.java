@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 public class HomeActivity extends ActionBarActivity {
 
@@ -20,13 +21,15 @@ public class HomeActivity extends ActionBarActivity {
 
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+        getSupportActionBar().hide();
     }
 
     public void assignBtnEventHandlersHomePage() {
         ImageButton searchButton = (ImageButton) findViewById(R.id.btnRideSearch);
         ImageButton driverButton = (ImageButton) findViewById(R.id.btnDriver);
         ImageButton accdetailsButton = (ImageButton) findViewById(R.id.btnAccountDetails);
-        ImageButton placholderButton = (ImageButton) findViewById(R.id.btnActiveRide);
+        ImageButton myRidesButton = (ImageButton) findViewById(R.id.btnActiveRide);
 
         searchButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -40,7 +43,7 @@ public class HomeActivity extends ActionBarActivity {
             public void onClick(View v) {
                 //perform action
                 //Hide buttons
-                Intent createRideIntent = new Intent(HomeActivity.this, MyRides.class);
+                Intent createRideIntent = new Intent(HomeActivity.this, Driver.class);
                 startActivity(createRideIntent);
                 //Show login text fields
 
@@ -54,11 +57,12 @@ public class HomeActivity extends ActionBarActivity {
 
             }
         });
-        placholderButton.setOnClickListener(new View.OnClickListener() {
+        myRidesButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //perform action
                 //Hide buttons
-
+                Intent myRidesIntent = new Intent(HomeActivity.this, MyRides.class);
+                startActivity(myRidesIntent);
                 //Show login text fields
 
             }

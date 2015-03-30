@@ -16,14 +16,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:text="@string/hello_world" />
+        android:text="@string/hello_world"
+        android:id="@+id/textView4" />
 
     <TableLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_below="@+id/app_bar"
         android:layout_alignParentStart="true"
-        android:background="@color/primary">
+        android:background="@color/primary"
+        android:layout_below="@+id/imageView">
 
         <TableRow
             android:layout_width="fill_parent"
@@ -36,10 +37,9 @@
                 android:id="@+id/btnRideSearch"
                 android:layout_weight="1"
                 android:layout_marginLeft="5dp"
-                android:background="@drawable/ic_action_search"
                 android:clickable="true"
-                android:backgroundTint="@color/primary_material_dark"
-                android:elevation="2dp" />
+                android:elevation="2dp"
+                android:background="@drawable/ic_pageview_black_36dp" />
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -47,7 +47,7 @@
                 android:id="@+id/btnDriver"
                 android:layout_weight="1"
                 android:layout_marginRight="5dp"
-                android:background="@drawable/ic_action_driver"
+                android:background="@drawable/ic_explore_black_36dp"
                 android:backgroundTint="@color/primary_material_dark" />
         </TableRow>
 
@@ -62,8 +62,7 @@
                 android:id="@+id/btnAccountDetails"
                 android:layout_weight="1"
                 android:layout_marginLeft="5dp"
-                android:background="@drawable/ic_action_user"
-                android:backgroundTint="@color/primary_dark_material_dark"
+                android:background="@drawable/ic_account_circle_black_36dp"
                 android:elevation="2dp" />
 
             <ImageButton
@@ -72,11 +71,20 @@
                 android:id="@+id/btnActiveRide"
                 android:layout_weight="1"
                 android:layout_marginRight="5dp"
-                android:background="@drawable/ic_action_activeride"
+                android:background="@drawable/ic_book_black_36dp"
                 android:backgroundTint="@color/primary_material_dark"
                 android:elevation="2dp"
                 android:translationZ="5dp" />
         </TableRow>
     </TableLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/hitchhome_top_bar_125px" />
 
 </RelativeLayout>

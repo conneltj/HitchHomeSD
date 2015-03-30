@@ -4,4 +4,6 @@
     android:layout_height="wrap_content"
     android:background="@color/primary"
     android:elevation="3dp"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark" />
+    android:theme="@style/ThemeOverlay.AppCompat.Dark"
+    android:logo="@drawable/hitchhome_top_bar_125px"
+    />

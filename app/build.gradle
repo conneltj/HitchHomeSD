@@ -25,4 +25,10 @@ dependencies {
     compile 'com.android.support:appcompat-v7:21.0.3'
     compile 'com.google.android.gms:play-services:6.5.87'
     compile 'com.github.shell-software:fab:1.0.5'
+    compile 'com.rengwuxian.materialedittext:library:2.0.0-SNAPSHOT'//might need removed
+    compile 'info.hoang8f:fbutton:1.0.5'//might also need removed
+    compile 'com.github.manuelpeinado.fadingactionbar:fadingactionbar:3.1.2'//might need removed
+    compile 'com.beardedhen:androidbootstrap:+'//bootstrap
+    compile 'com.github.navasmdc:MaterialDesign:1.+@aar'//material design library
+    compile 'me.grantland:autofittextview:0.2.+'// auto fit text view
 }

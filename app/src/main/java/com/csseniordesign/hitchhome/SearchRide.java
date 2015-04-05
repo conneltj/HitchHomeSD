@@ -2,6 +2,7 @@ package com.csseniordesign.hitchhome;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -15,6 +16,7 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.rengwuxian.materialedittext.MaterialAutoCompleteTextView;
 import com.software.shell.fab.ActionButton;
 
 import java.util.ArrayList;
@@ -26,6 +28,7 @@ public class SearchRide extends ActionBarActivity implements AdapterView.OnItemC
     EditText myDate;
     ActionButton myFab;
     RecyclerView myRecycler;
+    Toolbar toolbar;
 
 
     @Override
@@ -35,7 +38,7 @@ public class SearchRide extends ActionBarActivity implements AdapterView.OnItemC
 
         doOnClickBindings();
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.app_bar);
+        toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle("Search Ride");
@@ -51,12 +54,26 @@ public class SearchRide extends ActionBarActivity implements AdapterView.OnItemC
         //Data to be displayed in adapter
         ArrayList<RideItem> ridesList = new ArrayList<RideItem>();
 
-        AutoCompleteTextView autoCompView = (AutoCompleteTextView) findViewById(R.id.txtDestination);
+        //ridesList.add(new RideItem(1, "Batavia", "$3.00", "April 6th, 2015", "5:00 pm"));
+
+        //Create adapter
+        RecyclerView.Adapter adapter = new MyCustomAdapter(SearchRide.this, ridesList);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        AutoCompleteTextView autoCompView = (AutoCompleteTextView) findViewById(R.id.txtLocale);
         autoCompView.setAdapter(new CityStateAutoCompleteAdapter(this, R.layout.autocomplete_listitem));
         autoCompView.setThreshold(3);
         autoCompView.setOnItemClickListener(this);
 
+        setButtonAnimations();
 
+    }
+
+    private void setButtonAnimations() {
+        // To set show animation:
+        myFab.setShowAnimation(ActionButton.Animations.ROLL_FROM_RIGHT);
+        myFab.setHideAnimation(ActionButton.Animations.ROLL_TO_RIGHT);
     }
 
     @Override
@@ -85,7 +102,7 @@ public class SearchRide extends ActionBarActivity implements AdapterView.OnItemC
     }
 
     protected void doOnClickBindings() {
-        myDate = (EditText) findViewById(R.id.txtDate);
+        myDate = (MaterialAutoCompleteTextView) findViewById(R.id.txtDeptLocale);
         myDate.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 DatePickerFragment newFragment = new DatePickerFragment() {
@@ -110,15 +127,20 @@ public class SearchRide extends ActionBarActivity implements AdapterView.OnItemC
     }
 
     private void animate() {
+        float relHeight = (float) findViewById(R.id.RelativeLayoutSearchRide).getHeight();
+        float translation = - relHeight;
+
         RelativeLayout relLayout = (RelativeLayout) findViewById(R.id.RelativeLayoutSearchRide);
-        //ScaleAnimation scale = new ScaleAnimation((float)1.0, (float)0.5, (float)1.0, (float)1.0);
-        //scale.setFillAfter(true);
-        //scale.setDuration(500);
-        //relLayout.startAnimation(scale);
-        relLayout.animate().translationY((float)-500);
-        myFab.animate().translationY((float)-500);
+        RelativeLayout relLayoutMain = (RelativeLayout) findViewById(R.id.SearchRideMainLayout);
+
+        myFab.playHideAnimation();
+        relLayout.animate().translationY(translation);
+        relLayout.setVisibility(View.GONE);
+        //View v = relLayoutMain.inflate(this, R.layout.ride_result, relLayoutMain);
+        //v.animate().translationY((float) toolbar.getBottom());
+
+        myFab.setTranslationY(translation);
+        //myFab.setImageResource(R.drawable.fab_edit_button);
+        myFab.playShowAnimation();
     }
-
-
-
 }

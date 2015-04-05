@@ -31,81 +31,109 @@
         android:layout_width="match_parent"
         android:layout_height="319dp">
 
-        <view
-            class="com.rengwuxian.materialedittext.MaterialEditText"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txtEmail"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="EMAIL:"
+            android:id="@+id/lblEmail"
             android:textColor="@color/primary_dark_material_dark"
-            android:editable="true"
-            android:textSize="20dp"
-            android:layout_marginLeft="33dp"
-            android:hint="Enter Email here:"
-            android:layout_below="@+id/textView"
+            android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginRight="33dp" />
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="14dp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#8C000000"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/emailDivider"
+            android:layout_below="@+id/lblEmail"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="5dp" />
+
+        <view
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            class="com.rengwuxian.materialedittext.MaterialEditText"
+            android:id="@+id/txtEmail"
+            android:layout_below="@+id/emailDivider"
+            android:layout_alignStart="@+id/emailDivider"
+            android:layout_alignEnd="@+id/emailDivider"
+            android:textSize="14dp"
+            android:hint="Contact Email Address"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="PHONE:"
+            android:id="@+id/lblPhone"
+            android:layout_below="@+id/txtEmail"
+            android:layout_alignStart="@+id/lblEmail"
+            android:layout_marginTop="10dp"
+            android:textSize="14dp"
+            android:textColor="@color/primary_dark_material_dark" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#8C000000"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/phoneDivider"
+            android:layout_below="@+id/lblPhone"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="5dp" />
 
         <view
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             class="com.rengwuxian.materialedittext.MaterialEditText"
             android:id="@+id/txtPhone"
-            android:layout_marginLeft="33dp"
-            android:textColor="@color/primary_dark_material_dark"
-            android:layout_below="@+id/textView2"
+            android:layout_below="@+id/phoneDivider"
+            android:layout_alignStart="@+id/phoneDivider"
+            android:layout_alignEnd="@+id/phoneDivider"
+            android:layout_marginTop="5dp"
+            android:hint="Contact Phone Number"
+            android:textSize="14dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="ADDITIONAL INFO:"
+            android:id="@+id/textView"
+            android:layout_below="@+id/txtPhone"
+            android:layout_alignStart="@+id/txtPhone"
+            android:textColor="@color/primary_dark_material_dark" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#8C000000"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/addInfoDivider"
+            android:layout_below="@+id/textView"
             android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:hint="Enter Phone Here:"
-            android:layout_marginRight="33dp"
-            android:editable="true" />
+            android:layout_marginTop="5dp" />
 
         <view
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             class="com.rengwuxian.materialedittext.MaterialEditText"
-            android:id="@+id/txtDrvPref"
-            android:layout_marginLeft="33dp"
-            android:textColor="@color/primary_dark_material_dark"
-            android:layout_below="@+id/textView3"
-            android:layout_marginRight="33dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentStart="true"
-            android:hint="Enter any additional information you would like the driver to know"
-            android:editable="true" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Email:"
-            android:id="@+id/textView"
-            android:textColor="@color/primary_dark_material_dark"
-            android:layout_alignParentTop="true"
-            android:layout_alignStart="@+id/txtEmail"
-            android:layout_marginTop="10dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Phone:"
-            android:id="@+id/textView2"
-            android:layout_below="@+id/txtEmail"
-            android:layout_alignStart="@+id/txtEmail"
-            android:textColor="@color/primary_dark_material_dark"
-            android:layout_marginTop="10dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Driver Preferences:"
-            android:id="@+id/textView3"
-            android:textColor="@color/primary_dark_material_dark"
-            android:layout_below="@+id/txtPhone"
-            android:layout_alignStart="@+id/txtDrvPref"
-            android:layout_marginTop="10dp" />
+            android:id="@+id/txtAddInfo"
+            android:layout_below="@+id/addInfoDivider"
+            android:layout_alignStart="@+id/addInfoDivider"
+            android:layout_alignEnd="@+id/addInfoDivider"
+            android:layout_marginTop="10dp"
+            android:hint="Additional Information for driver"
+            android:textSize="14dp" />
 
     </RelativeLayout>
 

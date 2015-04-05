@@ -65,7 +65,9 @@
             android:layout_alignEnd="@+id/emailDivider"
             android:textSize="14dp"
             android:hint="Contact Email Address"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -100,7 +102,9 @@
             android:layout_alignEnd="@+id/phoneDivider"
             android:layout_marginTop="5dp"
             android:hint="Contact Phone Number"
-            android:textSize="14dp" />
+            android:textSize="14dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -131,9 +135,11 @@
             android:layout_below="@+id/addInfoDivider"
             android:layout_alignStart="@+id/addInfoDivider"
             android:layout_alignEnd="@+id/addInfoDivider"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:hint="Additional Information for driver"
-            android:textSize="14dp" />
+            android:textSize="14dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
 
     </RelativeLayout>
 

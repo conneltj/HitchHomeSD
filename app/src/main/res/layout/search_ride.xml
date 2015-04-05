@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/SearchRideMainLayout">
 
     <include
         android:id="@+id/app_bar"
@@ -19,102 +21,134 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:gravity="bottom"
-        android:layout_alignParentRight="true"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@color/primary"
-        android:layout_below="@+id/app_bar"
         android:id="@+id/RelativeLayoutSearchRide"
-        >
+        android:layout_below="@+id/app_bar"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="15dp"
+        android:focusable="true"
+        android:elevation="2dp">
 
-
-        <AutoCompleteTextView
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txtDestination"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="DESTINATION"
+            android:id="@+id/textView9"
             android:layout_alignParentTop="true"
-            android:layout_marginBottom="200dp"
+            android:layout_alignStart="@+id/destinationDivider"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"
+            android:textSize="14dp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#8C000000"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/destinationDivider"
+            android:layout_below="@+id/textView9"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:ems="10"
+            android:id="@+id/txtDestAddr"
+            android:textSize="14dp"
+            android:hint="Address"
+            android:layout_marginRight="20dp"
+            android:layout_alignTop="@+id/destinationDivider"
+            android:layout_alignStart="@+id/txtLocale"
+            android:layout_marginTop="10dp" />
+
+        <com.rengwuxian.materialedittext.MaterialAutoCompleteTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtLocale"
             android:hint="City, St"
-            android:textSize="@dimen/abc_text_size_small_material"
+            android:textSize="14dp"
+            android:layout_below="@+id/txtDestAddr"
             android:layout_alignParentEnd="true"
-            android:layout_toEndOf="@+id/textView5"
-            android:layout_marginRight="50dp" />
+            android:layout_alignStart="@+id/textDeptAddr"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="100dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Destination:"
-            android:id="@+id/textView5"
-            android:layout_alignTop="@+id/txtDestination"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="50dp"
-            android:textColor="@color/primary_dark_material_dark" />
+            android:text="ORIGIN"
+            android:id="@+id/txtOrigin"
+            android:layout_below="@+id/txtLocale"
+            android:layout_alignStart="@+id/destinationDivider"
+            android:textSize="14dp"
+            android:textColor="#000000"
+            android:layout_marginTop="10dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Point of Origin:"
-            android:id="@+id/textView6"
-            android:layout_below="@+id/textView5"
-            android:layout_toStartOf="@+id/txtDestination"
-            android:textColor="@color/primary_dark_material_dark"
-            android:layout_marginTop="15dp" />
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#8C000000"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/originDivider"
+            android:layout_below="@+id/txtOrigin"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp" />
 
-        <AutoCompleteTextView
-            android:layout_width="wrap_content"
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/autoCompleteTextView"
-            android:layout_alignTop="@+id/textView6"
+            android:id="@+id/textDeptAddr"
             android:textSize="@dimen/abc_text_size_small_material"
             android:textIsSelectable="false"
-            android:hint="Departure City, St"
-            android:layout_alignEnd="@+id/txtDestination"
-            android:layout_toEndOf="@+id/textView6" />
+            android:layout_below="@+id/originDivider"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@+id/txtOrigin"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:hint="Address" />
 
-        <TextView
-            android:layout_width="wrap_content"
+        <com.rengwuxian.materialedittext.MaterialAutoCompleteTextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Travel Date:"
-            android:id="@+id/textView7"
-            android:layout_below="@+id/autoCompleteTextView"
-            android:layout_toStartOf="@+id/autoCompleteTextView"
-            android:textColor="@color/primary_dark_material_dark" />
-
-        <AutoCompleteTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtDate"
-            android:layout_below="@+id/autoCompleteTextView"
+            android:id="@+id/txtDeptLocale"
             android:textSize="@dimen/abc_text_size_small_material"
-            android:hint="Departure Day, Month, Year"
-            android:layout_alignEnd="@+id/autoCompleteTextView"
-            android:layout_toEndOf="@+id/textView7" />
+            android:hint="City, State"
+            android:layout_below="@+id/textDeptAddr"
+            android:layout_alignStart="@+id/textDeptAddr"
+            android:layout_alignEnd="@+id/txtLocale"
+            android:layout_marginRight="20dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Donation:"
-            android:id="@+id/textView8"
-            android:layout_below="@+id/txtDate"
-            android:layout_toStartOf="@+id/txtDate"
-            android:textColor="@color/primary_dark_material_dark" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="number"
             android:ems="10"
-            android:id="@+id/editText"
-            android:layout_below="@+id/txtDate"
+            android:id="@+id/txtTripDate"
+            android:layout_below="@+id/txtDeptLocale"
             android:textSize="@dimen/abc_text_size_small_material"
-            android:layout_alignEnd="@+id/txtDate"
-            android:layout_toEndOf="@+id/textView8"
-            android:hint="Gasoline, Snacks, etc." />
+            android:hint="Departure Date"
+            android:layout_alignStart="@+id/txtDeptLocale"
+            android:layout_marginRight="20dp"
+            android:inputType="none"
+            android:layout_alignEnd="@+id/txtLocale" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:id="@+id/txtDonation"
+            android:textSize="@dimen/abc_text_size_small_material"
+            android:hint="Tip"
+            android:layout_marginRight="220dp"
+            android:layout_below="@+id/txtTripDate"
+            android:layout_alignStart="@+id/txtTripDate"
+            android:inputType="numberDecimal" />
+
 
     </RelativeLayout>
 
@@ -123,15 +157,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="@dimen/fab_margin"
-        android:layout_marginBottom="-32dp"
+        android:layout_marginBottom="135dp"
         fab:image="@drawable/ic_search_white_24dp"
         fab:image_size="24dp"
-        fab:button_color="@color/fab_material_black"
+        fab:button_color="@color/primary"
         fab:button_colorPressed="@color/primary_dark"
-        fab:show_animation="@anim/fab_roll_from_down"
-        fab:hide_animation="@anim/fab_roll_to_down"
-        android:elevation="1dp"
-        android:layout_alignBottom="@+id/RelativeLayoutSearchRide"
+        android:elevation="3dp"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true" />
 
     <view
@@ -141,6 +173,7 @@
         android:id="@+id/searchRecyclerView"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_below="@+id/RelativeLayoutSearchRide" />
+        android:layout_below="@+id/RelativeLayoutSearchRide"
+        android:background="@color/primary" />
 
 </RelativeLayout>

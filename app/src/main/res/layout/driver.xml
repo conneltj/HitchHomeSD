@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -20,57 +21,66 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.60">
 
-        <AutoCompleteTextView
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Final Destination City"
-            android:id="@+id/driverDestination"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Destination City:"
+            android:id="@+id/lblDestCity"
+            android:textColor="@color/primary_dark_material_dark"
             android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginLeft="75dp"
-            android:layout_marginRight="75dp"
-            android:layout_marginTop="20dp" />
+            android:layout_alignParentStart="true" />
 
-        <EditText
+        <view
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/txtNumRiders"
+            class="com.rengwuxian.materialedittext.MaterialAutoCompleteTextView"
+            android:id="@+id/driverDestination"
+            android:layout_marginRight="30dp"
+            android:hint="City, St"
+            android:layout_below="@+id/lblDestCity"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true" />
+
+        <view
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            class="com.rengwuxian.materialedittext.MaterialEditText"
+            android:id="@+id/txtnumRiders"
+            android:hint="Number of Riders"
             android:layout_below="@+id/driverDestination"
             android:layout_alignStart="@+id/driverDestination"
-            android:layout_alignEnd="@+id/driverDestination"
-            android:hint="Number of Riders" />
+            android:layout_alignEnd="@+id/driverDestination" />
 
-        <EditText
+        <view
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            class="com.rengwuxian.materialedittext.MaterialEditText"
             android:id="@+id/txtDepartureDate"
-            android:layout_below="@+id/txtNumRiders"
-            android:layout_alignEnd="@+id/txtNumRiders"
-            android:layout_alignStart="@+id/txtNumRiders"
-            android:hint="Departure Date" />
+            android:layout_below="@+id/txtnumRiders"
+            android:layout_alignStart="@+id/txtnumRiders"
+            android:layout_alignEnd="@+id/txtnumRiders"
+            android:hint="Day of Travel" />
 
-        <EditText
+        <view
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/txtSetDonation"
+            class="com.rengwuxian.materialedittext.MaterialEditText"
+            android:id="@+id/txtDonation"
             android:layout_below="@+id/txtDepartureDate"
-            android:hint="Set Donation"
+            android:layout_alignStart="@+id/txtDepartureDate"
             android:layout_alignEnd="@+id/txtDepartureDate"
-            android:layout_alignStart="@+id/txtDepartureDate" />
+            android:hint="Set Donation" />
 
-        <CheckBox
+        <view
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New CheckBox"
-            android:id="@+id/checkBox"
-            android:layout_below="@+id/txtSetDonation"
-            android:layout_alignStart="@+id/txtSetDonation"
-            android:layout_alignEnd="@+id/txtSetDonation" />
+            class="com.rengwuxian.materialedittext.MaterialEditText"
+            android:id="@+id/txtLuggageInfo"
+            android:layout_below="@+id/txtDonation"
+            android:layout_alignStart="@+id/txtDonation"
+            android:layout_alignEnd="@+id/txtDonation"
+            android:hint="Additional information regarding luggage and car space" />
 
     </RelativeLayout>
 

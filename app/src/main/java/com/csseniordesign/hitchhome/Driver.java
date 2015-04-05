@@ -12,6 +12,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.rengwuxian.materialedittext.MaterialAutoCompleteTextView;
+
 /**
  * Created by Tim on 3/23/2015.
  */
@@ -31,10 +33,10 @@ public class Driver extends ActionBarActivity implements AdapterView.OnItemClick
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle("Driver");
 
-        AutoCompleteTextView autoCompDest = (AutoCompleteTextView) findViewById(R.id.driverDestination);
-        autoCompDest.setAdapter(new CityStateAutoCompleteAdapter(this, R.layout.autocomplete_listitem));
-        autoCompDest.setThreshold(3);
-        //autoCompDest.getOnItemClickListener(this);
+        MaterialAutoCompleteTextView MautoCompDest = (MaterialAutoCompleteTextView) findViewById(R.id.driverDestination);
+        MautoCompDest.setAdapter(new CityStateAutoCompleteAdapter(this, R.layout.autocomplete_listitem));
+        MautoCompDest.setThreshold(3);
+        //MautoCompDest.getOnItemClickListener(this);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

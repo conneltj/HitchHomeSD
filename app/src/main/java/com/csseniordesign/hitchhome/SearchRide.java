@@ -2,6 +2,8 @@ package com.csseniordesign.hitchhome;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -10,13 +12,20 @@ import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
+
+import com.software.shell.fab.ActionButton;
+
+import java.util.ArrayList;
 
 /**
  * Created by conne_000 on 3/6/2015.
  */
 public class SearchRide extends ActionBarActivity implements AdapterView.OnItemClickListener {
     EditText myDate;
+    ActionButton myFab;
+    RecyclerView myRecycler;
 
 
     @Override
@@ -24,12 +33,23 @@ public class SearchRide extends ActionBarActivity implements AdapterView.OnItemC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_ride);
 
-        //doOnClickBindings();
+        doOnClickBindings();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle("Search Ride");
+
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.searchRecyclerView);
+        //Improves performance since it doesn't change content
+        recyclerView.setHasFixedSize(true);
+
+        //Using linear layout
+        RecyclerView.LayoutManager myLayoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(myLayoutManager);
+
+        //Data to be displayed in adapter
+        ArrayList<RideItem> ridesList = new ArrayList<RideItem>();
 
         AutoCompleteTextView autoCompView = (AutoCompleteTextView) findViewById(R.id.txtDestination);
         autoCompView.setAdapter(new CityStateAutoCompleteAdapter(this, R.layout.autocomplete_listitem));
@@ -79,11 +99,26 @@ public class SearchRide extends ActionBarActivity implements AdapterView.OnItemC
                 newFragment.show(getSupportFragmentManager(), "datePicker");
             }
 
+        });
 
-            //Show signup textfields
-
+        myFab = (ActionButton) findViewById(R.id.abNewRide);
+        myFab.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                animate();
+            }
         });
     }
+
+    private void animate() {
+        RelativeLayout relLayout = (RelativeLayout) findViewById(R.id.RelativeLayoutSearchRide);
+        //ScaleAnimation scale = new ScaleAnimation((float)1.0, (float)0.5, (float)1.0, (float)1.0);
+        //scale.setFillAfter(true);
+        //scale.setDuration(500);
+        //relLayout.startAnimation(scale);
+        relLayout.animate().translationY((float)-500);
+        myFab.animate().translationY((float)-500);
+    }
+
 
 
 }

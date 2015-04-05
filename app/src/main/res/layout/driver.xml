@@ -19,69 +19,124 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.60">
+        android:layout_weight="0.05">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Destination City:"
+            android:text="DESTINATION CITY"
             android:id="@+id/lblDestCity"
             android:textColor="@color/primary_dark_material_dark"
             android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignStart="@+id/destinationDivider"
+            android:layout_marginTop="10dp"
+            android:textSize="14dp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#8C000000"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/destinationDivider"
+            android:layout_below="@+id/lblDestCity"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp" />
+
+        <view
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            class="com.rengwuxian.materialedittext.MaterialEditText"
+            android:id="@+id/view"
+            android:layout_below="@+id/destinationDivider"
+            android:layout_marginLeft="33dp"
+            android:layout_marginRight="33dp"
+            android:textSize="14dp"
+            android:hint="Street Address"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp" />
+
+        <view
+            class="com.rengwuxian.materialedittext.MaterialEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/driverDestination"
+            android:layout_marginLeft="33dp"
+            android:layout_marginRight="33dp"
+            android:textSize="14dp"
+            android:hint="City, State"
+            android:layout_below="@+id/view"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="RIDE INFORMATION"
+            android:id="@+id/textView5"
+            android:layout_below="@+id/driverDestination"
+            android:layout_alignStart="@+id/destinationDivider"
+            android:textColor="@color/primary_dark_material_dark"
+            android:textSize="14dp"
+            android:layout_marginTop="10dp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#8C000000"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/rideInfoDivider"
+            android:layout_below="@+id/textView5"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="5dp" />
+
+        <view
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            class="com.rengwuxian.materialedittext.MaterialEditText"
+            android:id="@+id/view3"
+            android:layout_below="@+id/rideInfoDivider"
+            android:layout_alignStart="@+id/driverDestination"
+            android:layout_alignEnd="@+id/driverDestination"
+            android:textSize="14dp"
+            android:hint="Number of Seats available"
+            android:layout_marginTop="10dp" />
 
         <view
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             class="com.rengwuxian.materialedittext.MaterialAutoCompleteTextView"
-            android:id="@+id/driverDestination"
-            android:layout_marginRight="30dp"
-            android:hint="City, St"
-            android:layout_below="@+id/lblDestCity"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true" />
-
-        <view
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            class="com.rengwuxian.materialedittext.MaterialEditText"
-            android:id="@+id/txtnumRiders"
-            android:hint="Number of Riders"
-            android:layout_below="@+id/driverDestination"
-            android:layout_alignStart="@+id/driverDestination"
-            android:layout_alignEnd="@+id/driverDestination" />
-
-        <view
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            class="com.rengwuxian.materialedittext.MaterialEditText"
             android:id="@+id/txtDepartureDate"
-            android:layout_below="@+id/txtnumRiders"
-            android:layout_alignStart="@+id/txtnumRiders"
-            android:layout_alignEnd="@+id/txtnumRiders"
-            android:hint="Day of Travel" />
+            android:layout_below="@+id/view3"
+            android:layout_alignStart="@+id/view3"
+            android:layout_alignEnd="@+id/view3"
+            android:layout_marginTop="5dp"
+            android:hint="Departure Date"
+            android:textSize="14dp" />
 
         <view
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             class="com.rengwuxian.materialedittext.MaterialEditText"
-            android:id="@+id/txtDonation"
+            android:id="@+id/view2"
             android:layout_below="@+id/txtDepartureDate"
             android:layout_alignStart="@+id/txtDepartureDate"
             android:layout_alignEnd="@+id/txtDepartureDate"
-            android:hint="Set Donation" />
-
-        <view
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            class="com.rengwuxian.materialedittext.MaterialEditText"
-            android:id="@+id/txtLuggageInfo"
-            android:layout_below="@+id/txtDonation"
-            android:layout_alignStart="@+id/txtDonation"
-            android:layout_alignEnd="@+id/txtDonation"
-            android:hint="Additional information regarding luggage and car space" />
+            android:hint="Suggested Donation"
+            android:textSize="14dp" />
 
     </RelativeLayout>
+
+    <info.hoang8f.widget.FButton
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/btnPostRide"
+        android:text="POST RIDE" />
 
 </LinearLayout>

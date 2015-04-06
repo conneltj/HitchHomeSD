@@ -26,7 +26,7 @@
         android:id="@+id/RelativeLayoutSearchRide"
         android:layout_below="@+id/app_bar"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="0dp"
         android:focusable="true"
         android:elevation="2dp">
 
@@ -157,13 +157,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="@dimen/fab_margin"
-        android:layout_marginBottom="135dp"
+        android:layout_marginBottom="-32dp"
         fab:image="@drawable/ic_search_white_24dp"
         fab:image_size="24dp"
         fab:button_color="@color/primary"
         fab:button_colorPressed="@color/primary_dark"
         android:elevation="3dp"
-        android:layout_alignParentBottom="true"
+        android:layout_alignBottom="@+id/RelativeLayoutSearchRide"
         android:layout_alignParentEnd="true" />
 
     <android.support.v7.widget.RecyclerView

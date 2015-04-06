@@ -6,11 +6,10 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 
 public class HomeActivity extends ActionBarActivity {
 
-    //private Toolbar toolbar;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,10 +18,10 @@ public class HomeActivity extends ActionBarActivity {
 
         assignBtnEventHandlersHomePage();
 
-    //    toolbar = (Toolbar) findViewById(R.id.app_bar);
-    //    setSupportActionBar(toolbar);
-    //    getSupportActionBar().setDisplayUseLogoEnabled(true);
-    //    getSupportActionBar().hide();
+        /*toolbar = (Toolbar) findViewById(R.id.app_bar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+        getSupportActionBar().hide();*/
     }
 
     public void assignBtnEventHandlersHomePage() {
@@ -64,7 +63,6 @@ public class HomeActivity extends ActionBarActivity {
                 Intent myRidesIntent = new Intent(HomeActivity.this, MyRides.class);
                 startActivity(myRidesIntent);
                 //Show login text fields
-
             }
         });
 

@@ -1,11 +1,15 @@
 package com.csseniordesign.hitchhome;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+
+import com.beardedhen.androidbootstrap.BootstrapCircleThumbnail;
 
 public class HomeActivity extends ActionBarActivity {
 
@@ -25,10 +29,10 @@ public class HomeActivity extends ActionBarActivity {
     }
 
     public void assignBtnEventHandlersHomePage() {
-        ImageButton searchButton = (ImageButton) findViewById(R.id.btnRideSearch);
-        ImageButton driverButton = (ImageButton) findViewById(R.id.btnDriver);
-        ImageButton accdetailsButton = (ImageButton) findViewById(R.id.btnAccountDetails);
-        ImageButton myRidesButton = (ImageButton) findViewById(R.id.btnActiveRide);
+        BootstrapCircleThumbnail searchButton = (BootstrapCircleThumbnail) findViewById(R.id.searchRide);
+        BootstrapCircleThumbnail driverButton = (BootstrapCircleThumbnail) findViewById(R.id.createRide);
+        BootstrapCircleThumbnail accdetailsButton = (BootstrapCircleThumbnail) findViewById(R.id.accountDetails);
+        //ImageButton myRidesButton = (ImageButton) findViewById(R.id.btnActiveRide);
 
         searchButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -56,7 +60,7 @@ public class HomeActivity extends ActionBarActivity {
 
             }
         });
-        myRidesButton.setOnClickListener(new View.OnClickListener() {
+        /*myRidesButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //perform action
                 //Hide buttons
@@ -64,7 +68,7 @@ public class HomeActivity extends ActionBarActivity {
                 startActivity(myRidesIntent);
                 //Show login text fields
             }
-        });
+        });*/
 
     }
 

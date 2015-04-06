@@ -60,6 +60,7 @@ public class LoginActivity extends ActionBarActivity {
         final Button btnSkipShit = (Button) findViewById(R.id.btnSkipShit);
         final EditText txtEmail = (EditText) findViewById(R.id.txtEmailAddress);
         final EditText txtPassword = (EditText) findViewById(R.id.txtPassword);
+        btnLogin.setVisibility(View.VISIBLE);
         btnSkipShit.setVisibility(View.VISIBLE);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {

@@ -19,7 +19,8 @@
             android:text="Login"
             android:id="@+id/btnLogin"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:visibility="visible"/>
 
         <ImageView
             android:layout_width="wrap_content"

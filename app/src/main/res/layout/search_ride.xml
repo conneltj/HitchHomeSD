@@ -37,7 +37,7 @@
             android:text="DESTINATION"
             android:id="@+id/textView9"
             android:layout_alignParentTop="true"
-            android:layout_alignStart="@+id/destinationDivider"
+            android:layout_alignStart="@+id/nameDivider"
             android:layout_marginTop="10dp"
             android:textColor="#000000"
             android:textSize="14dp" />
@@ -48,7 +48,7 @@
             android:background="#8C000000"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
-            android:id="@+id/destinationDivider"
+            android:id="@+id/nameDivider"
             android:layout_below="@+id/textView9"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp" />
@@ -60,9 +60,9 @@
             android:ems="10"
             android:id="@+id/txtDestAddr"
             android:textSize="14dp"
-            android:hint="Address"
+            android:hint="Street Address"
             android:layout_marginRight="20dp"
-            android:layout_alignTop="@+id/destinationDivider"
+            android:layout_alignTop="@+id/nameDivider"
             android:layout_alignStart="@+id/txtLocale"
             android:layout_marginTop="10dp" />
 
@@ -70,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtLocale"
-            android:hint="City, St"
+            android:hint="City, State"
             android:textSize="14dp"
             android:layout_below="@+id/txtDestAddr"
             android:layout_alignParentEnd="true"
@@ -84,7 +84,7 @@
             android:text="ORIGIN"
             android:id="@+id/txtOrigin"
             android:layout_below="@+id/txtLocale"
-            android:layout_alignStart="@+id/destinationDivider"
+            android:layout_alignStart="@+id/nameDivider"
             android:textSize="14dp"
             android:textColor="#000000"
             android:layout_marginTop="10dp" />
@@ -166,14 +166,13 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true" />
 
-    <view
+    <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         class="android.support.v7.widget.RecyclerView"
         android:id="@+id/searchRecyclerView"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_below="@+id/RelativeLayoutSearchRide"
-        android:background="@color/primary" />
+        android:layout_below="@+id/RelativeLayoutSearchRide" />
 
 </RelativeLayout>

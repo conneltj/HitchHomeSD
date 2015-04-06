@@ -10,7 +10,7 @@ import android.widget.ImageView;
 
 public class HomeActivity extends ActionBarActivity {
 
-    private Toolbar toolbar;
+    //private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,10 +19,10 @@ public class HomeActivity extends ActionBarActivity {
 
         assignBtnEventHandlersHomePage();
 
-        toolbar = (Toolbar) findViewById(R.id.app_bar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayUseLogoEnabled(true);
-        getSupportActionBar().hide();
+    //    toolbar = (Toolbar) findViewById(R.id.app_bar);
+    //    setSupportActionBar(toolbar);
+    //    getSupportActionBar().setDisplayUseLogoEnabled(true);
+    //    getSupportActionBar().hide();
     }
 
     public void assignBtnEventHandlersHomePage() {

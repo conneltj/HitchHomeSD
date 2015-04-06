@@ -5,6 +5,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.RadioButton;
 
 /**
  * Created by conne_000 on 3/6/2015.
@@ -36,4 +38,22 @@ public class AccountDetails extends ActionBarActivity {
         return id == R.id.action_settings || super.onOptionsItemSelected(item);
 
     }
+
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.rbMale:
+                if (checked)
+                    break;
+            case R.id.rbFemale:
+                if (checked)
+                    break;
+            case R.id.rbOther:
+                if (checked)
+                    break;
+        }
+    }
+
 }

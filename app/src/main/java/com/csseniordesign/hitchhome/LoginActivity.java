@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.example.conne_000.myapplication.hitchome_cloud.myApi.MyApi;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
@@ -64,12 +65,12 @@ public class LoginActivity extends ActionBarActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //perform action
-                //Hide buttons
-                btnLogin.setVisibility(View.INVISIBLE);
-                btnSignUp.setVisibility(View.INVISIBLE);
-                //Show login text fields
-                txtEmail.setVisibility(View.VISIBLE);
-                txtPassword.setVisibility(View.VISIBLE);
+                new MaterialDialog.Builder(LoginActivity.this)
+                        .title("Login")
+                        .customView(R.layout.sign_up, true)
+                        .positiveText("Login")
+                        .negativeText("Cancel")
+                        .show();
                 test();
 
 
@@ -79,11 +80,12 @@ public class LoginActivity extends ActionBarActivity {
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //perform action
-                //Hide Buttons
-
-                //Show signup textfields
-
+                new MaterialDialog.Builder(LoginActivity.this)
+                        .title("Sign Up")
+                        .customView(R.layout.sign_up, true)
+                        .positiveText("Sign Me Up")
+                        .negativeText("Cancel")
+                        .show();
             }
         });
 
